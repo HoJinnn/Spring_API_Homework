@@ -1,12 +1,14 @@
 package com.sparta.springapihomework.controller;
 
+import com.sparta.springapihomework.dto.GetAllPostDto;
+import com.sparta.springapihomework.dto.GetOnePostDto;
+import com.sparta.springapihomework.dto.PostDeleteDto;
+import com.sparta.springapihomework.dto.PostRequestDto;
 import com.sparta.springapihomework.models.*;
 import com.sparta.springapihomework.service.PostService;
-import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController

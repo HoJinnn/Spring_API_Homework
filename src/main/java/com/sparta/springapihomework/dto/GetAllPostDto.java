@@ -1,4 +1,4 @@
-package com.sparta.springapihomework.models;
+package com.sparta.springapihomework.dto;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;

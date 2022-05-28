@@ -1,8 +1,8 @@
 package com.sparta.springapihomework.models;
 
+import com.sparta.springapihomework.dto.PostRequestDto;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import net.bytebuddy.dynamic.loading.InjectionClassLoader;
 
 import javax.persistence.*;
 
