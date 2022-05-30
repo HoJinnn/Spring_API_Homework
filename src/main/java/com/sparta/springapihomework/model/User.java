@@ -1,4 +1,4 @@
-package com.sparta.springapihomework.models;
+package com.sparta.springapihomework.model;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -23,6 +23,10 @@ public class User extends Timestamped {
 
     @Column(nullable = false)
     private String password;
+
+    @Column(nullable = false)
+    @Enumerated(value = EnumType.STRING)
+    private UserRoleEnum role;
 
     public User(String username, String password) {
         this.username = username;

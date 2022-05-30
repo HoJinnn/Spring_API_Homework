@@ -1,8 +1,8 @@
 package com.sparta.springapihomework.service;
 
 import com.sparta.springapihomework.dto.SignupRequestDto;
-import com.sparta.springapihomework.models.User;
-import com.sparta.springapihomework.models.UserRepository;
+import com.sparta.springapihomework.model.User;
+import com.sparta.springapihomework.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -29,7 +29,7 @@ public class UserService {
 
         Optional<User> found = userRepository.findByUsername(username);
         if (found.isPresent()) {
-            throw new IllegalArgumentException("중복된 닉네임입니다다");
+            throw new IllegalArgumentException("중복된 닉네임입니다");
         }
 
         boolean passwordCheck = Pattern.matches("^[a-zA-Z0-9]{4,15}$", password);

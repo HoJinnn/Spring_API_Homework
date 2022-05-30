@@ -1,4 +1,4 @@
-package com.sparta.springapihomework.models;
+package com.sparta.springapihomework.model;
 
 import com.sparta.springapihomework.dto.PostRequestDto;
 import lombok.Getter;

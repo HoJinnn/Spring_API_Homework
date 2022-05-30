@@ -1,4 +1,4 @@
-package com.sparta.springapihomework.models;
+package com.sparta.springapihomework.model;
 
 import lombok.Getter;
 import org.springframework.data.annotation.CreatedDate;
