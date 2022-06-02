@@ -1,15 +1,17 @@
 package com.sparta.springapihomework.dto;
 
-import com.sparta.springapihomework.model.Comment;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
+import java.time.LocalDateTime;
+
 @Getter
 @RequiredArgsConstructor
-public class PostRequestDto {
-    private final String name;
+@Builder
+public class PostResponseDto {
     private final String title;
+    private final String name;
     private final String description;
-    private final String password;
-    private final Comment comment;
+    private final LocalDateTime createdAt;
 }

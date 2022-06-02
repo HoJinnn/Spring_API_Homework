@@ -1,10 +1,9 @@
 package com.sparta.springapihomework.service;
 
 import com.sparta.springapihomework.dto.GetAllPostDto;
-import com.sparta.springapihomework.dto.GetOnePostDto;
 import com.sparta.springapihomework.dto.PostDeleteDto;
 import com.sparta.springapihomework.dto.PostRequestDto;
-import com.sparta.springapihomework.model.*;
+import com.sparta.springapihomework.model.Post;
 import com.sparta.springapihomework.repository.PostRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -13,6 +12,7 @@ import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 
 @RequiredArgsConstructor
 @Service
@@ -41,13 +41,9 @@ public class PostService {
         return getAllPostDtos;
     }
 
-    public GetOnePostDto getOnePost(Long id) {
-        Post post = postRepository.findById(id).orElseThrow(
-            () -> new IllegalArgumentException("아이디가 존재하지 않습니다.")
-        );
-        return new GetOnePostDto(post.getName(), post.getTitle(), post.getDescription(), post.getCreatedAt());
+    public Optional<Post> getOnePost(Long id) {
+        return postRepository.findById(id);
     }
-
     public void deletePost(Long id, PostDeleteDto deleteDto) {
         Post post = postRepository.findById(id).orElseThrow(
                 () -> new IllegalArgumentException("아이디가 존재하지 않습니다.")

@@ -3,16 +3,18 @@ package com.sparta.springapihomework.model;
 import com.sparta.springapihomework.dto.PostRequestDto;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.*;
 
-@Entity
+@Entity @Setter
 @Getter
 @NoArgsConstructor
 public class Post extends Timestamped {
 
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Id
+    @Column(name = "POST_ID")
     private Long id;
 
     @Column(nullable = false)
@@ -27,6 +29,7 @@ public class Post extends Timestamped {
     @Column(nullable = false)
     private String password;
 
+
     public Post(PostRequestDto requestDto) {
         this.title = requestDto.getTitle();
         this.name = requestDto.getName();
@@ -40,6 +43,4 @@ public class Post extends Timestamped {
         this.description = requestDto.getDescription();
         this.password = requestDto.getPassword();
     }
-
-
 }
